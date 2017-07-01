@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Projects from "./Components/Projects";
+
 import "./App.css";
 
 class App extends Component {
@@ -7,17 +8,25 @@ class App extends Component {
         super();
         this.state = {
             projects: [{
-                title: 'Business Website',
-                category: 'Web Something'
-            }]
-        }
+                    title: "Business Website",
+                    category: "Web Something"
+                },
+                {
+                    title: "Social App",
+                    category: "Mobile Dev"
+                },
+                {
+                    title: "Ecommerce Shopping Cart",
+                    category: "Web Dev"
+                }
+            ]
+        };
     }
     render() {
         return ( <
             div className = "App" >
             <
-            p > My App < /p> <Projects / >
-            <
+            p > My App < /p> <Projects projects={this.state.projects} / > { " " } <
             /div>
         );
     }
