@@ -5,7 +5,7 @@ class Projects extends Component {
         return ( <
             div className = "Projects" >
             <
-            p > My Projects < /p> <
+            p > My Projects < /p>{" "} <
             /div>
         );
     }

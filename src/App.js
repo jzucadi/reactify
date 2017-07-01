@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Projects from "./Component/Projects";
 import "./App.css";
 
 class App extends Component {
@@ -6,7 +7,9 @@ class App extends Component {
         return ( <
             div className = "App" >
             <
-            p > My App < /p>{" "} <
+            p > My App < /p> <
+            Projects / >
+            <
             /div>
         );
     }
