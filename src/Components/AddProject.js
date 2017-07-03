@@ -1,27 +1,32 @@
 import React, { Component } from "react";
 
 class AddProject extends Component {
-  constructor(){
-      super();
-      this.state = {
-          newProject:{}
-      }
+  constructor() {
+    super();
+    this.state = {
+      newProject: {}
+    };
   }
   static defaultProps = {
     categories: ["Web Design", "Web Development", "Mobile Development"]
   };
 
   handleSubmit(e) {
-    if(this.refs.title.value === ''){
-        alert('Title is required');
+    if (this.refs.title.value === "") {
+      alert("Title is required");
     } else {
-        this.setState({newProject:{
+      this.setState(
+        {
+          newProject: {
             title: this.refs.title.value,
             category: this.refs.category.value
-        }}, function(){
-            //console.log(this.state);
-            this.props.addProject(this.state.newProject);
-        });
+          }
+        },
+        function() {
+          //console.log(this.state);
+          this.props.addProject(this.state.newProject);
+        }
+      );
     }
     e.preventDefault();
   }
@@ -29,7 +34,7 @@ class AddProject extends Component {
   render() {
     let categoryOptions = this.props.categories.map(category => {
       return (
-        <option key={category} value="category">
+        <option key={category} value={category}>
           {category}
         </option>
       );
