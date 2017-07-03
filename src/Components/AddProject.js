@@ -19,7 +19,8 @@ class AddProject extends Component {
             title: this.refs.title.value,
             category: this.refs.category.value
         }}, function(){
-            console.log(this.state);
+            //console.log(this.state);
+            this.props.addProject(this.state.newProject);
         });
     }
     e.preventDefault();
