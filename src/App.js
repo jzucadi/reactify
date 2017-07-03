@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Projects from "./Components/Projects";
+import AddProject from "./Components/AddProject";
 
 import "./App.css";
 
@@ -7,8 +8,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [
-        {
+      projects: []
+    }
+  }
+
+  componentWillMount(){
+    this.setState({projects: [
+      {
           title: "Business Website",
           category: "Web Something"
         },
@@ -20,13 +26,14 @@ class App extends Component {
           title: "Ecommerce Shopping Cart",
           category: "Web Dev"
         }
-      ]
-    };
+    ]});
   }
+
   render() {
     return (
       <div className="App">
-        <p> My App </p> <Projects projects={this.state.projects} />  {" "}
+        <AddProject />
+        <p> My App </p> <Projects projects={this.state.projects} />  
       </div>
     );
   }
