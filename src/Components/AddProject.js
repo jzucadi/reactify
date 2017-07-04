@@ -65,4 +65,9 @@ class AddProject extends Component {
   }
 }
 
+AddProject.propTypes = {
+  cateogries: React.PropTypes.arrau,
+  addProject: React.PropTypes.func
+}
+
 export default AddProject;
